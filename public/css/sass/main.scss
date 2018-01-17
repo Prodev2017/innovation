@@ -1,0 +1,31 @@
+// icon font path
+$icon-font-path: "/fonts/";
+
+// bootstrap
+@import "bootstrap";
+@import "../../../node_modules/eonasdan-bootstrap-datetimepicker/src/sass/bootstrap-datetimepicker";
+
+// gantt chart styles
+@import "ocws/plugins/gantt";
+
+/* =================================
+   OCWS STYLES
+   ================================= */
+
+	// colors
+	@import "ocws/colors/colors";
+	@import "ocws/colors/classes";
+
+	
+	@import "ocws/core/icons";
+	@import "ocws/core/forms";
+	@import "ocws/core/progress-bar";
+	@import "ocws/core/tables";
+	@import "ocws/core/widgets";
+	@import "ocws/core/nav";
+	@import "ocws/core/common";
+	@import "ocws/core/assets";
+
+/* =================================
+   OCWS STYLES END
+   ================================= */

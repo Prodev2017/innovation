@@ -1,0 +1,86 @@
+/* *********  iconts-display  **************************** */
+
+.fontawesome-icon-list .fa-hover a:hover {
+  background-color: #ddd;
+  color: #fff;
+  text-decoration: none;
+}
+.fontawesome-icon-list .fa-hover a {
+  display: block;
+  line-height: 32px;
+  height: 32px;
+  padding-left: 10px;
+  border-radius: 4px;
+}
+.fontawesome-icon-list .fa-hover a:hover .fa {
+  font-size: 28px;
+  vertical-align: -6px;
+}
+.fontawesome-icon-list .fa-hover a .fa {
+  width: 32px;
+  font-size: 16px;
+  display: inline-block;
+  text-align: right;
+  margin-right: 10px;
+}
+.main_menu .fa {
+  width: 26px;
+  opacity: .99;
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* *********  /iconts-display  **************************** */
+
+/* *********  glyphicons  **************************** */
+
+.bs-glyphicons {
+  margin: 0 -10px 20px;
+  overflow: hidden
+}
+.bs-glyphicons-list {
+  padding-left: 0;
+  list-style: none
+}
+.bs-glyphicons li {
+  float: left;
+  width: 25%;
+  height: 115px;
+  padding: 10px;
+  font-size: 10px;
+  line-height: 1.4;
+  text-align: center;
+  background-color: #f9f9f9;
+  border: 1px solid #fff
+}
+.bs-glyphicons .glyphicon {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 24px
+}
+.bs-glyphicons .glyphicon-class {
+  display: block;
+  text-align: center;
+  word-wrap: break-word
+}
+.bs-glyphicons li:hover {
+  color: #fff;
+  background-color: #1ABB9C
+}
+@media (min-width: 768px) {
+  .bs-glyphicons {
+    margin-right: 0;
+    margin-left: 0
+  }
+  .bs-glyphicons li {
+    width: 12.5%;
+    font-size: 12px
+  }
+}
+
+/* *********  /glyphicons  **************************** */

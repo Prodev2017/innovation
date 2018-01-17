@@ -1,0 +1,166 @@
+<div class="modal-header">
+
+	<button type="button" class="close" data-dismiss="modal">
+		<span aria-hidden="true">×</span>
+	</button>
+	<h3 class="modal-title text-center">Facture {{number}}</h3>
+</div>
+<div class="modal-body gray-l-ocws-bg">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 col-xs-12">
+				<h5 class="mrgn-tb-10">Numéro de facture</h5>
+				<p class="h3 text-ocws-black font-bold">{{number}}</p>
+				<h5 class="mrgn-t-15">Cours du devis</h5>
+				<p class="h3 text-ocws-black font-bold">1,2312</p>
+			</div>
+			<div class="col-sm-4 col-xs-12">
+				<h5 class="mrgn-tb-10">Nom de furnissuer</h5>
+				<p class="h3 text-ocws-black font-bold">{{supplier}}</p>
+				<h5 class="mrgn-t-15">Montant de la facture</h5>
+				<p class="h3 text-ocws-black font-bold">$ {{amount}}</p>
+			</div>
+			<div class="col-sm-4 col-xs-12">
+				<h5 class="mrgn-tb-10">Signature du contrat</h5>
+				<p class="h3 text-ocws-black font-bold">{{formatDate 'DD/MM/YYYY' created_at}}</p>
+				<h5 class="mrgn-t-15">Date de paiement</h5>
+				<p class="h3 text-ocws-black font-bold">{{formatDate 'DD/MM/YYYY' date_paid}}</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal-body">
+	<h4 class="modal-title mrgn-tb-10">Répartition du paiement :</h4>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 col-sm-4 col-xs-12">
+				<label class="font-normal mrgn-tb-10">Type de paiement</label>
+				<select class="form-control">
+					<option value="Contrat à terme">Contrat à terme</option>
+					<option value="Comptant">Comptant</option>
+				</select>
+			</div>
+			<div class="col-md-3 col-sm-4 col-md-offset-1 col-xs-12">
+				<label class="font-normal mrgn-tb-10">Montant de la levée</label>
+				<input class="form-control" type="text" />
+			</div>
+			<div class="col-md-3 col-sm-4 col-md-offset-1 col-xs-12">
+				<label class="font-normal mrgn-tb-10">Choix du contrat à terme</label>
+				<select class="select2_single form-control">
+					<option value="Contrat à terme">Contrat à terme</option>
+					<option value="FR4567A6">FR4567A6</option>
+					<option value="FR4123B1">FR4123B1</option>
+					<option value="FR8747G1">FR8747G1</option>
+				</select>
+			</div>
+			<div class="col-sm-1 col-xs-12">
+				<div class="btn-group pad-t-40">
+					<button class="btn btn-sm btn-default" type="button">
+						<i class="fa fa-trash-o"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 mrgn-tb-20">
+				<a href="javascript:;" class="h4">
+					<i class="fa fa-plus-circle"></i> Ajouter un type de paiement
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal-body">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<h4 class="modal-title mrgn-tb-10">Alertes :
+					<h4>
+						<div class="table-responsive">
+							<table class="ocws-table table-striped jambo_table text-center dataTable ocsw-modals-table">
+								<thead>
+									<tr>
+										<th></th>
+										<th class="column-title text-center">Paire de devises</th>
+										<th class="cours_clmn column-title text-center">TMB</th>
+										<th class="column-title text-center">DIR.</th>
+										<th class="montant_clmn column-title text-center">Montant à acheter</th>
+										<th class="column-title text-center">Date limite</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>ALERTE 1</td>
+										<td>EUR > USD</td>
+										<td>1.1377</td>
+										<td>1.1200</td>
+										<td>123450000</td>
+										<td>30/11/2017</td>
+										<td>
+											<div class="btn-group">
+												<a href="#" class="btn-sm">
+													<i class="fa fa-trash-o"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>ALERTE 2</td>
+										<td>EUR > USD</td>
+										<td>1.1377</td>
+										<td>1.1200</td>
+										<td>123450000</td>
+										<td>30/11/2017</td>
+										<td>
+											<div class="btn-group">
+												<a href="javascript:;" class="btn-sm">
+													<i class="fa fa-trash-o"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="mrgn-tb-20">
+							<a href="javascript:;" class="h4">
+								<i class="fa fa-plus-circle"></i> Ajouter une alerte
+							</a>
+						</div>
+						<div class="row mrgn-0 gray-l-ocws-bg pad-15">
+							<div class="col-xs-12">
+								<h4 class="modal-title">Nouvelle alerte
+									<h4>
+							</div>
+							<div class="col-md-3 col-sm-4 col-xs-12">
+								<label class="font-normal h5">Paire de devise</label>
+								<select class="form-control">
+									<option value="EUR/USD">EUR/USD</option>
+									<option value="USD/EUR">USD/EUR</option>
+								</select>
+							</div>
+							<div class="col-md-3 col-sm-4 col-xs-12">
+								<label class="font-normal h5">Taux de change</label>
+								<input class="form-control" type="text" />
+							</div>
+							<div class="col-md-3 col-sm-4 col-xs-12">
+								<label class="font-normal h5">Date limite de l'operation</label>
+								<input class="pilotage_timepicker form-control" type="text" />
+							</div>
+							<div class="col-md-3 col-sm-4 col-xs-12">
+								<label class="font-normal h5">Montant à acheter</label>
+								<input class="form-control" type="text" />
+							</div>
+							<div class="col-xs-12 mrgn-t-15 text-right">
+								<button class="btn btn-primary">Ajouter</button>
+							</div>
+						</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal-footer">
+	<button type="button" class="btn btn-default">Annuler</button>
+	<button type="button" class="btn btn-success">Sauvegarder</button>
+</div>

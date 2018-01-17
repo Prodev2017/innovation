@@ -1,0 +1,134 @@
+<button type="button" class="close" data-dismiss="modal" id="close-new-contract-form"><span aria-hidden="true">×</span>
+</button>
+<div class="modal-header">
+	<h4 class="modal-title text-center">Nouveau Contrat</h4>
+</div>
+<div class="modal-body">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 col-md-push-1 col-xs-12">
+				<div class="row">
+					<div class="col-sm-4 col-xs-12 h4">Paire de devise</div>
+					<div class="col-sm-8 col-xs-12">
+						<select name="pair" class="form-control">
+							<option value="EUR/USD">EUR/USD</option>
+							<option value="USD/EUR">USD/EUR</option>
+						</select>
+					</div>
+					<div class="col-xs-12 h4 text-left">Date de transaction</div>
+					<div class="col-sm-4 col-xs-12">
+						<div class="text-secondary">Date d'achat</div>
+						<div class="calendar-exibit">
+							<fieldset>
+								<div class="control-group">
+									<div class="controls">
+										<div class="xdisplay_inputx form-group">
+											<input type="text" class="pilotage_timepicker form-control" name="date_buy">
+										</div>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+					<div class="col-sm-4 col-xs-12">
+						<div class="text-secondary">Date d'ouverture</div>
+						<div class="calendar-exibit">
+							<fieldset>
+								<div class="control-group">
+									<div class="controls">
+										<div class="xdisplay_inputx form-group">
+											<input type="text" class="pilotage_timepicker form-control" name="date_open">
+										</div>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+					<div class="col-sm-4 col-xs-12">
+						<div class="text-secondary">Date de fermeture</div>
+						<div class="calendar-exibit">
+							<fieldset>
+								<div class="control-group">
+									<div class="controls">
+										<div class="xdisplay_inputx form-group">
+											<input type="text" class="pilotage_timepicker form-control" name="date_close" />
+										</div>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+					<div class="col-sm-6 col-xs-12">
+						<div class="h4">Montant de l'achat</div>
+						<input type="text" class="form-control" value="" name="amount" />
+					</div>
+					<div class="col-sm-6 col-xs-12">
+						<div class="h4">Taux de change obtenu</div>
+						<input type="text" class="form-control" value="" name="rate" />
+					</div>
+					<div class="col-xs-12">
+						<div class="h4">Commentaire collaboratif direction financière</div>
+						<textarea class="form-control" name="comment"></textarea>
+					</div>
+					<div class="col-sm-6 col-xs-12">
+						<div class="h4">N* de ticket de l'opération</div>
+						<input type="text" class="form-control" value="" name="number" />
+						<div class="h4">Projet associé à cette couverture</div>
+						<input type="text" class="form-control" value="" name="project" />
+					</div>
+					<div class="col-sm-6 col-xs-12">
+						<div class="form-group">
+							<div class="h4">Objet de la couverture</div>
+							<div class="radio">
+								<label>
+									<input type="radio" class="flat" checked name="object" value="produits"> Paiement de produits
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" class="flat" name="object" value="services"> Paiement de services
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" class="flat" name="object" value="salaires"> Paiement de salaires
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" class="flat" name="object" value="inter-grupe"> Paiement de inter-groupe
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" class="flat" name="object" value="autres"> Autres catégories pré-réféerencées
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" class="flat" name="object" value="secondaire"> Sujet secondaire
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal-footer">
+	<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+	<button type="button" class="btn btn-primary" id="submit-new-contract">Enregistrer contrat</button>
+</div>
+
+
+<script>
+// init datetimepicker
+$('#popup .pilotage_timepicker').each(function() {
+    $(this).datetimepicker({
+        defaultDate: new Date(),
+        format: 'DD/MM/YYYY',
+    });
+});
+</script>

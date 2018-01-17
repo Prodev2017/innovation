@@ -1,0 +1,115 @@
+#gantt > svg {
+    background-color: transparent;
+
+    .axis path {
+        fill: none;
+        stroke: grey;
+        shape-rendering: crispEdges;
+    }
+
+    .axis.x {
+      path {
+        display: none;
+      }
+
+      .tick {
+        line {
+            stroke: #ebebeb;
+        }
+
+        @media(max-width: 639px) {
+          &:nth-child(2n+1) text {
+            display: none;
+          }
+        }
+
+        @media(max-width: 479px) {
+          text {
+            font-size: 100%;
+          }
+        }
+
+        text {
+          fill: #999;
+          @media(min-width: 760px) {
+            font-size: 130%;
+          }
+          @media(min-width: 480px) and (max-width: 759px) {
+            font-size: 125%;
+          }
+        }
+      }
+    }
+
+    .grid {
+        &.y .tick {
+            display: none;
+        }
+
+        .tick {
+            stroke: #ebebeb;
+            opacity: 1;
+            shape-rendering: crispEdges;
+            //stroke-dasharray: 2,2; //2,12
+            @media(max-width: 639px) {
+                &:nth-child(2n+1) {
+                    display: none;
+                }
+            }
+        }
+
+        path {
+          stroke-width: 0;
+        }
+    }
+
+    rect.times.bar {
+        fill: #e6e6e6;
+
+        &.step-1 {
+            fill: #999;
+        }
+    }
+
+    .bargroup {
+        rect, text {
+          cursor: pointer;
+        }
+
+        .axislabel {
+            .ticket {
+                fill: #0097e0;
+            }
+
+            text {
+                fill: #fff;
+            }
+        }
+
+        &:hover, &.highlight {
+          .axislabel rect {
+            fill: #ffbe00;
+          }
+
+          rect.times.bar {
+              &.step-1 {
+                  fill: #ffbe00;
+              }
+
+              &.step-2 {
+                  fill: #bf4d0a;
+              }
+          }
+
+          rect.percent.bar {
+            fill:#05db5c;
+            fill-opacity:0.8;
+          }
+
+          /*text.percent.label {
+            fill: #fff;
+            filter: drop-shadow(1px 1px #aaa);
+        }*/
+        }
+      }
+}

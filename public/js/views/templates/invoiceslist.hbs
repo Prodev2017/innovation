@@ -1,0 +1,412 @@
+
+
+<table class="ocws-table table-striped jambo_table bulk_action text-center dataTable gestion-table" width="100%">
+	<thead>
+		<tr class="headings" role="row">
+			<th colspan="12" class="no-sort">
+				<select class="form-control">
+					<option>Bulk actions</option>
+					<option value="Payer ces factures">Payer ces factures</option>
+				</select>
+				<button class="btn btn-default" data-toggle="modal" data-target=".pay-bills-modal">Apply</button>
+			</th>
+		</tr>
+		<tr class="main-thead-tr headings">
+			<th class="text-center no-sort">
+				<input type="checkbox" id="check-all" class="flat">
+			</th>
+			<th class="column-title text-center">SIGNATURE DU CONTRAT</th>
+			<th class="column-title text-center">N° CONTRAT CLIENT</th>
+			<th id="furnisseurs_clmn" class="column-title text-center ocws-table-filter">
+				NOM DES FOURNISSEURS
+				<div class="dropdown ocws-table-dropdown">
+					<a id="drop5" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+						<i class="fa fa-toggle-down"></i>
+					</a>
+					<div class="dropdown-menu animated fadeInDown" aria-labelledby="drop5"></div>
+				</div>
+			</th>
+			<th class="column-title text-center">MONTANT EN USD</th>
+			<th class="column-title text-center">COURS DU DEVIS VALIDE</th>
+			<th id="var_clmn" class="column-title text-center ocws-table-filter">
+				VAR inf. (3%)
+				<div class="dropdown ocws-table-dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+						<i class="fa fa-toggle-down"></i>
+					</a>
+					<div class="dropdown-menu animated fadeInDown"></div>
+				</div>
+			</th>
+			<th id="date_paiement_clmn" class="column-title text-center ocws-table-filter">
+				DATE DE PAIEMENT
+				<div class="dropdown ocws-table-dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+						<i class="fa fa-toggle-down"></i>
+					</a>
+					<div class="dropdown-menu animated fadeInDown"></div>
+				</div>
+			</th>
+			<th class="column-title text-center">% COUVERTURE</th>
+			<th class="column-title text-center mauve-ocws-bg">GAIN/PERTE DE CHANGE SPOT</th>
+			<th class="column-title text-center mauve-ocws-bg">GAIN/PERTE DE CHANGE C-T</th>
+		</tr>
+	</thead>
+
+	<tbody id="invoices_list">
+		<tr>
+			<td class="a-center ">
+				<input type="checkbox" class="flat" name="table_records">
+			</td>
+			<td>02/11/16</td>
+			<td>FR4567A0</td>
+			<td>CISCO</td>
+			<td class="no-ws">$ 10 000 000,00</td>
+			<td>1,10606</td>
+			<td class="text-ocws-green">0,55%</td>
+			<td>30/07/17</td>
+			<td class="project_progress">
+				<div class="progress progress_sm">
+					<div class="progress-bar bg-green" role="progressbar" data-transitiongoal="57"></div>
+				</div>
+				<small>57% Complete</small>
+			</td>
+			<td class="text-ocws-green no-ws">51 280,97€</td>
+			<td class="text-ocws-green no-ws">97 669,77€</td>
+		</tr>
+		<tr>
+			<td class="a-center ">
+				<input type="checkbox" class="flat" name="table_records">
+			</td>
+			<td>02/11/16</td>
+			<td>FR4567A6</td>
+			<td>AUTRES</td>
+			<td class="no-ws">$ 12 000 000,00</td>
+			<td>1,10680</td>
+			<td class="text-ocws-red">-0,15%</td>
+			<td>30/07/17</td>
+			<td class="project_progress">
+				<div class="progress progress_sm">
+					<div class="progress-bar bg-green" role="progressbar" data-transitiongoal="31"></div>
+				</div>
+				<small>31% Complete</small>
+			</td>
+			<td class="text-ocws-red no-ws">-16 858,15€</td>
+			<td class="text-ocws-green no-ws">39 846,15€</td>
+		</tr>
+		<tr>
+			<td class="a-center ">
+				<input type="checkbox" class="flat" name="table_records">
+			</td>
+			<td>02/11/16</td>
+			<td>FR4567A6</td>
+			<td>TEST2</td>
+			<td class="no-ws">$ 12 000 000,00</td>
+			<td>1,10680</td>
+			<td class="text-ocws-red">-0,15%</td>
+			<td>30/07/17</td>
+			<td class="project_progress">
+				<div class="progress progress_sm">
+					<div class="progress-bar bg-green" role="progressbar" data-transitiongoal="31"></div>
+				</div>
+				<small>31% Complete</small>
+			</td>
+			<td class="text-ocws-red no-ws">-16 858,15€</td>
+			<td class="text-ocws-green no-ws">39 846,15€</td>
+		</tr>
+		<tr>
+			<td class="a-center ">
+				<input type="checkbox" class="flat" name="table_records">
+			</td>
+			<td>30/10/16</td>
+			<td>FR4567A6</td>
+			<td>TEST3</td>
+			<td class="no-ws">$ 18 000 000,00</td>
+			<td>1,10680</td>
+			<td class="text-ocws-red">-3,15%</td>
+			<td>27/11/17</td>
+			<td class="project_progress">
+				<div class="progress progress_sm">
+					<div class="progress-bar bg-green" role="progressbar" data-transitiongoal="88"></div>
+				</div>
+				<small>88% Complete</small>
+			</td>
+			<td class="text-ocws-red no-ws">-16 858,15€</td>
+			<td class="text-ocws-green no-ws">39 846,15€</td>
+		</tr>
+		<tr>
+			<td class="a-center ">
+				<input type="checkbox" class="flat" name="table_records">
+			</td>
+			<td>02/11/16</td>
+			<td>FR4567A6</td>
+			<td>TEST6</td>
+			<td class="no-ws">$ 18 000 000,00</td>
+			<td>1,10680</td>
+			<td class="text-ocws-green">2,33%</td>
+			<td>1/09/17</td>
+			<td class="project_progress">
+				<div class="progress progress_sm">
+					<div class="progress-bar bg-green" role="progressbar" data-transitiongoal="55"></div>
+				</div>
+				<small>55% Complete</small>
+			</td>
+			<td class="text-ocws-green no-ws">16 858,15€</td>
+			<td class="text-ocws-green no-ws">19 846,15€</td>
+		</tr>
+		<tr>
+			<td class="a-center ">
+				<input type="checkbox" class="flat" name="table_records">
+			</td>
+			<td>02/11/16</td>
+			<td>FR4567A6</td>
+			<td>TEST2</td>
+			<td class="no-ws">$ 12 000 000,00</td>
+			<td>1,10680</td>
+			<td class="text-ocws-red">-0,15%</td>
+			<td>30/07/17</td>
+			<td class="project_progress">
+				<div class="progress progress_sm">
+					<div class="progress-bar bg-green" role="progressbar" data-transitiongoal="31"></div>
+				</div>
+				<small>31% Complete</small>
+			</td>
+			<td class="text-ocws-red no-ws">-16 858,15€</td>
+			<td class="text-ocws-green no-ws">39 846,15€</td>
+		</tr>
+		<tr>
+			<td class="a-center ">
+				<input type="checkbox" class="flat" name="table_records">
+			</td>
+			<td>05/08/16</td>
+			<td>FR4567A6</td>
+			<td>TEST5</td>
+			<td class="no-ws">$ 44 000 000,00</td>
+			<td>1,10680</td>
+			<td class="text-ocws-red">-4,15%</td>
+			<td>24/08/17</td>
+			<td class="project_progress">
+				<div class="progress progress_sm">
+					<div class="progress-bar bg-green" role="progressbar" data-transitiongoal="14"></div>
+				</div>
+				<small>14% Complete</small>
+			</td>
+			<td class="text-ocws-red no-ws">-55 858,15€</td>
+			<td class="text-ocws-green no-ws">11 846,15€</td>
+		</tr>
+		<tr>
+			<td class="a-center ">
+				<input type="checkbox" class="flat" name="table_records">
+			</td>
+			<td>02/11/16</td>
+			<td>FR4567A6</td>
+			<td>TEST6</td>
+			<td class="no-ws">$ 18 000 000,00</td>
+			<td>1,10680</td>
+			<td class="text-ocws-red">-0,99%</td>
+			<td>1/09/17</td>
+			<td class="project_progress">
+				<div class="progress progress_sm">
+					<div class="progress-bar bg-green" role="progressbar" data-transitiongoal="55"></div>
+				</div>
+				<small>55% Complete</small>
+			</td>
+			<td class="text-ocws-green no-ws">16 858,15€</td>
+			<td class="text-ocws-green no-ws">19 846,15€</td>
+		</tr>
+		<tr>
+			<td class="a-center ">
+				<input type="checkbox" class="flat" name="table_records">
+			</td>
+			<td>02/11/16</td>
+			<td>FR4567A6</td>
+			<td>TEST6</td>
+			<td class="no-ws">$ 18 000 000,00</td>
+			<td>1,10680</td>
+			<td class="text-ocws-green">15,99%</td>
+			<td>1/09/17</td>
+			<td class="project_progress">
+				<div class="progress progress_sm">
+					<div class="progress-bar bg-green" role="progressbar" data-transitiongoal="55"></div>
+				</div>
+				<small>55% Complete</small>
+			</td>
+			<td class="text-ocws-green no-ws">16 858,15€</td>
+			<td class="text-ocws-green no-ws">19 846,15€</td>
+		</tr>
+		<tr>
+			<td class="a-center ">
+				<input type="checkbox" class="flat" name="table_records">
+			</td>
+			<td>02/11/16</td>
+			<td>FR4567A6</td>
+			<td>TEST6</td>
+			<td class="no-ws">$ 18 000 000,00</td>
+			<td>1,10680</td>
+			<td class="text-ocws-red">-2,99%</td>
+			<td>1/09/17</td>
+			<td class="project_progress">
+				<div class="progress progress_sm">
+					<div class="progress-bar bg-green" role="progressbar" data-transitiongoal="55"></div>
+				</div>
+				<small>55% Complete</small>
+			</td>
+			<td class="text-ocws-green no-ws">16 858,15€</td>
+			<td class="text-ocws-green no-ws">19 846,15€</td>
+		</tr>
+		<tr>
+			<td class="a-center ">
+				<input type="checkbox" class="flat" name="table_records">
+			</td>
+			<td>30/10/16</td>
+			<td>FR4567A6</td>
+			<td>TEST11</td>
+			<td class="no-ws">$ 18 000 000,00</td>
+			<td>1,10680</td>
+			<td class="text-ocws-red">-3,15%</td>
+			<td>27/11/17</td>
+			<td class="project_progress">
+				<div class="progress progress_sm">
+					<div class="progress-bar bg-green" role="progressbar" data-transitiongoal="88"></div>
+				</div>
+				<small>88% Complete</small>
+			</td>
+			<td class="text-ocws-red no-ws">-16 858,15€</td>
+			<td class="text-ocws-green no-ws">39 846,15€</td>
+		</tr>
+		<tr>
+			<td class="a-center ">
+				<input type="checkbox" class="flat" name="table_records">
+			</td>
+			<td>02/11/16</td>
+			<td>FR4567A6</td>
+			<td>TEST12</td>
+			<td class="no-ws">$ 18 000 000,00</td>
+			<td>1,10680</td>
+			<td class="text-ocws-green">2,33%</td>
+			<td>1/09/17</td>
+			<td class="project_progress">
+				<div class="progress progress_sm">
+					<div class="progress-bar bg-green" role="progressbar" data-transitiongoal="55"></div>
+				</div>
+				<small>55% Complete</small>
+			</td>
+			<td class="text-ocws-green no-ws">16 858,15€</td>
+			<td class="text-ocws-green no-ws">19 846,15€</td>
+		</tr>
+		<tr>
+			<td class="a-center ">
+				<input type="checkbox" class="flat" name="table_records">
+			</td>
+			<td>02/11/16</td>
+			<td>FR4567A6</td>
+			<td>TEST13</td>
+			<td class="no-ws">$ 12 000 000,00</td>
+			<td>1,10680</td>
+			<td class="text-ocws-red">-0,15%</td>
+			<td>30/07/17</td>
+			<td class="project_progress">
+				<div class="progress progress_sm">
+					<div class="progress-bar bg-green" role="progressbar" data-transitiongoal="31"></div>
+				</div>
+				<small>31% Complete</small>
+			</td>
+			<td class="text-ocws-red no-ws">-16 858,15€</td>
+			<td class="text-ocws-green no-ws">39 846,15€</td>
+		</tr>
+		<tr>
+			<td class="a-center ">
+				<input type="checkbox" class="flat" name="table_records">
+			</td>
+			<td>05/08/16</td>
+			<td>FR4567A6</td>
+			<td>TEST15</td>
+			<td class="no-ws">$ 44 000 000,00</td>
+			<td>1,10680</td>
+			<td class="text-ocws-red">-4,15%</td>
+			<td>24/08/17</td>
+			<td class="project_progress">
+				<div class="progress progress_sm">
+					<div class="progress-bar bg-green" role="progressbar" data-transitiongoal="14"></div>
+				</div>
+				<small>14% Complete</small>
+			</td>
+			<td class="text-ocws-red no-ws">-55 858,15€</td>
+			<td class="text-ocws-green no-ws">11 846,15€</td>
+		</tr>
+		<tr>
+			<td class="a-center ">
+				<input type="checkbox" class="flat" name="table_records">
+			</td>
+			<td>02/11/16</td>
+			<td>FR4567A6</td>
+			<td>TEST16</td>
+			<td class="no-ws">$ 18 000 000,00</td>
+			<td>1,10680</td>
+			<td class="text-ocws-red">-0,99%</td>
+			<td>1/09/17</td>
+			<td class="project_progress">
+				<div class="progress progress_sm">
+					<div class="progress-bar bg-green" role="progressbar" data-transitiongoal="55"></div>
+				</div>
+				<small>55% Complete</small>
+			</td>
+			<td class="text-ocws-green no-ws">16 858,15€</td>
+			<td class="text-ocws-green no-ws">19 846,15€</td>
+		</tr>
+		<tr>
+			<td class="a-center ">
+				<input type="checkbox" class="flat" name="table_records">
+			</td>
+			<td>02/11/16</td>
+			<td>FR4567A6</td>
+			<td>TEST17</td>
+			<td class="no-ws">$ 18 000 000,00</td>
+			<td>1,10680</td>
+			<td class="text-ocws-green">11,99%</td>
+			<td>1/09/17</td>
+			<td class="project_progress">
+				<div class="progress progress_sm">
+					<div class="progress-bar bg-green" role="progressbar" data-transitiongoal="55"></div>
+				</div>
+				<small>55% Complete</small>
+			</td>
+			<td class="text-ocws-green no-ws">16 858,15€</td>
+			<td class="text-ocws-green no-ws">19 846,15€</td>
+		</tr>
+		<tr>
+			<td class="a-center ">
+				<input type="checkbox" class="flat" name="table_records">
+			</td>
+			<td>02/11/16</td>
+			<td>FR4567A6</td>
+			<td>TEST18</td>
+			<td class="no-ws">$ 18 000 000,00</td>
+			<td>1,10680</td>
+			<td class="text-ocws-red">-2,99%</td>
+			<td>1/09/17</td>
+			<td class="project_progress">
+				<div class="progress progress_sm">
+					<div class="progress-bar bg-green" role="progressbar" data-transitiongoal="55"></div>
+				</div>
+				<small>55% Complete</small>
+			</td>
+			<td class="text-ocws-green no-ws">16 858,15€</td>
+			<td class="text-ocws-green no-ws">19 846,15€</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>2</td>
+			<td class="no-ws">$ 22 000 000,00</td>
+			<td>1.0646</td>
+			<td>0.17%</td>
+			<td></td>
+			<td></td>
+			<td class="no-ws">11 422,82€</td>
+			<td class="no-ws">123 515,91€</td>
+		</tr>
+	</tfoot>
+</table>

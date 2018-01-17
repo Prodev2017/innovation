@@ -1,0 +1,217 @@
+<button type="button" class="close" id="close-contract-form" data-dismiss="modal"><span aria-hidden="true">×</span>
+</button>
+<div class="modal-header">
+	<h4 class="modal-title text-center">{{ number }}</h4>
+	<div class="text-center text-ocws-green font-bold">98% complete</div>
+</div>
+<div class="modal-body">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 col-md-push-1 col-xs-12">
+				<div class="row">
+					<div class="col-sm-4 col-xs-12 h4">Paire de devise</div>
+					<div class="col-sm-8 col-xs-12">
+						<select class="form-control" name="pair">
+							<option {{# eq currency_src 'EUR'}}selected{{/eq}}>EUR/USD</option>
+							<option {{# eq currency_src 'USD'}}selected{{/eq}}>USD/EUR</option>
+						</select>
+					</div>
+					<div class="col-xs-12 h4 text-left">Date de transaction</div>
+					<div class="col-sm-4 col-xs-12">
+						<div class="text-secondary">Date d'achat</div>
+						<div class="calendar-exibit">
+							<fieldset>
+								<div class="control-group">
+									<div class="controls">
+										<div class="xdisplay_inputx form-group">
+											<input type="text" name="date_buy" value="{{formatDate 'DD/MM/YYYY' date_buy}}" class="pilotage_timepicker form-control">
+										</div>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+					<div class="col-sm-4 col-xs-12">
+						<div class="text-secondary">Date d'ouverture</div>
+						<div class="calendar-exibit">
+							<fieldset>
+								<div class="control-group">
+									<div class="controls">
+										<div class="xdisplay_inputx form-group">
+											<input type="text" name="date_open" value="{{formatDate 'DD/MM/YYYY' date_open}}" class="pilotage_timepicker form-control">
+										</div>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+					<div class="col-sm-4 col-xs-12">
+						<div class="text-secondary">Date de fermeture</div>
+						<div class="calendar-exibit">
+							<fieldset>
+								<div class="control-group">
+									<div class="controls">
+										<div class="xdisplay_inputx form-group">
+											<input type="text" name="date_close" value="{{formatDate 'DD/MM/YYYY' date_close}}" class="pilotage_timepicker form-control">
+										</div>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+					<div class="col-sm-6 col-xs-12">
+						<div class="h4">Montant de l'achat</div>
+						<input type="text" class="form-control" name="amount" value="{{amount}}" />
+					</div>
+					<div class="col-sm-6 col-xs-12">
+						<div class="h4">Taux de change obtenu</div>
+						<input type="text" class="form-control" name="rate" value="{{rate}}" />
+					</div>
+					<div class="col-xs-12">
+						<div class="h4">Commentaire collaboratif direction financière</div>
+						<textarea name="comment" class="form-control"></textarea>
+					</div>
+					<div class="col-sm-6 col-xs-12">
+						<div class="h4">N* de ticket de l'opération</div>
+						<input type="text" class="form-control" name="number" value="{{number}}" />
+						<div class="h4">Projet associé à cette couverture</div>
+						<input type="text" class="form-control" name="project" value="" />
+					</div>
+					<div class="col-sm-6 col-xs-12">
+						<div class="form-group">
+							<div class="h4">Objet de la couverture</div>
+							<div class="radio">
+								<label>
+									<input type="radio" class="flat" checked name="radio1"> Paiement de produits
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" class="flat" name="radio1"> Paiement de services
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" class="flat" name="radio1"> Paiement de salaires
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" class="flat" name="radio1"> Paiement de inter-groupe
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" class="flat" name="radio1"> Autres catégories pré-réféerencées
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" class="flat" name="radio1"> Sujet secondaire
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="pull-right">
+					<button type="button" class="btn btn-danger" id="remove-contract" data-dismiss="modal">Remove</button>
+					<button type="button" class="btn btn-success" id="submit-edit-contract">Update</button>	
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<h2 class="h3" style="margin: 20px 0;">Visualisation des factures payées avec ce contrat :</h2>
+				<div class="table-responsive">
+					<table class="table ocws-table table-striped jambo_table text-center" style="font-size: 12px; width: 99%;">
+						<thead>
+							<tr class="headings">
+								<th class="column-title text-center">Nurnéro de la facture </th>
+								<th class="column-title text-center">Montant payé</th>
+								<th class="column-title text-center">Date de réglement </th>
+								<th class="column-title text-center">Date réception facture</th>
+								<th class="column-title text-center">Cours comptable à réception</th>
+								<th class="column-title text-center">Cours budget</th>
+								<th class="column-title text-center">Object du réglement</th>
+								<th class="bulk-actions"></th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td>123456987</td>
+								<td>10 000$</td>
+								<td>31/05/2016 </td>
+								<td>31/05/2016 </td>
+								<td class="font-bold text-ocws-blue">1,1032</td>
+								<td class="font-bold text-ocws-blue">1,1123</td>
+								<td>Lorem ipsum dolor...</td>
+								<td class=" last"><a href="#">Voir cette facture <i class="fa fa-long-arrow-right"></i></a>
+								</td>
+							</tr>
+							<tr>
+								<td>321458759</td>
+								<td>20 000$</td>
+								<td>23/02/2017 </td>
+								<td>23/02/2017 </td>
+								<td class="font-bold text-ocws-blue">1,1032</td>
+								<td class="font-bold text-ocws-blue">1,1123</td>
+								<td>Lorem ipsum dolor...</td>
+								<td class=" last"><a href="#">Voir cette facture <i class="fa fa-long-arrow-right"></i></a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<h2 class="h3" style="margin: 20px 0;">Visualisation des factures prévisionnelles avec ce contrat :</h2>
+				<div class="table-responsive">
+					<table class="table ocws-table table-striped jambo_table text-center" style="font-size: 12px; width: 99%;">
+						<thead>
+							<tr class="headings">
+								<th class="column-title text-center">Nurnéro de la facture </th>
+								<th class="column-title text-center">Montant payé</th>
+								<th class="column-title text-center">Date de réglement </th>
+								<th class="column-title text-center">Date réception facture</th>
+								<th class="column-title text-center">Cours comptable à réception</th>
+								<th class="column-title text-center">Cours budget</th>
+								<th class="column-title text-center">Object du réglement</th>
+								<th class="bulk-actions"></th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td>123456987</td>
+								<td>10 000$</td>
+								<td>31/05/2016 </td>
+								<td>31/05/2016 </td>
+								<td class="font-bold text-ocws-blue">1,1032</td>
+								<td class="font-bold text-ocws-blue">1,1123</td>
+								<td>Lorem ipsum dolor...</td>
+								<td class=" last"><a href="#">Voir cette facture <i class="fa fa-long-arrow-right"></i></a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal-footer">
+	<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+	<button type="button" class="btn btn-primary">Enregistrer un paiement</button>
+</div>
+
+
+<script>
+// init datetimepicker
+$('#popup .pilotage_timepicker').each(function() {
+    $(this).datetimepicker({
+        defaultDate: new Date(),
+        format: 'DD/MM/YYYY',
+    });
+});
+</script>
